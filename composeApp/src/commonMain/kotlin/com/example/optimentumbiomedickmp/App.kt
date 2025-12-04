@@ -45,7 +45,8 @@ fun App() {
                 onCotizacion = { currentScreen = Screen.Cotizacion },
                 onInventario = { currentScreen = Screen.Inventario },
                 onContrato = { currentScreen = Screen.Contrato },
-                onCreditos = { currentScreen = Screen.Creditos }
+                onCreditos = { currentScreen = Screen.Creditos },
+                onLogout = { currentScreen = Screen.Login }
             )
             Screen.Inventario -> InventarioScreen(
                 onBack = { currentScreen = Screen.Home }

@@ -99,14 +99,13 @@ fun CreditosScreen(
     }
 }
 
-// ---- CÓDIGO AÑADIDO PARA LA PREVISUALIZACIÓN ----
+// ===== BLOQUE DE VISTA PREVIA CORREGIDO =====
 @Preview
 @Composable
 fun CreditosScreenPreview() {
-    // Se envuelve en un tema si es necesario para que la preview se vea correctamente.
-    // MaterialTheme {
-    CreditosScreen(
-        onBack = {} // Se proporciona una acción vacía para la preview
-    )
-    // }
+    // Se envuelve la pantalla en un MaterialTheme para que la vista previa
+    // pueda renderizar correctamente los componentes y estilos.
+    MaterialTheme {
+        CreditosScreen(onBack = {})
+    }
 }
