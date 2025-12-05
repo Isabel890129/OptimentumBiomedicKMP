@@ -19,7 +19,6 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 // 2. CORREGIDO EL IMPORT DE 'Screen'. AHORA APUNTA A LA RUTA CORRECTA (SIN 'ui').
 //    (Asegúrate de que el archivo Screen.kt esté al mismo nivel que App.kt)
-import com.example.optimentumbiomedickmp.Screen
 
 // 3. ELIMINADO EL IMPORT INCORRECTO de 'App' a sí mismo.
 

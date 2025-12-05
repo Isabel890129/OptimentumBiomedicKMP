@@ -41,23 +41,38 @@ kotlin {
     }
 
     sourceSets {
+        // ===== BLOQUE CORREGIDO =====
+        // Las dependencias de compose.ui, foundation y material se han eliminado de aquí
+        // porque ya están en commonMain. Solo se deja lo específico de Android.
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
         }
+
+        // ===== BLOQUE CORRECTO =====
+        // Todas las dependencias compartidas van aquí.
         commonMain.dependencies {
+            implementation(compose.ui)
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.ui)
+            implementation(compose.materialIconsExtended)
+            implementation(compose.material) // Dependencia principal para componentes de Material 3
+            implementation(compose.material3) // <-- AÑADE ESTA LÍNEA
+
+            // Dependencia fundamental para UI
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            // Dependencias para ViewModel
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
         }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
@@ -107,3 +122,4 @@ compose.desktop {
         }
     }
 }
+
